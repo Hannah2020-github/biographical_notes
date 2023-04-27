@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Hannah Chung 的作品集</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.6.4.js"
+      integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      // 設定箭頭的寬度及其透明度
+      $(function () {
+        $(function () {
+          var $slider = $(".gallery_arrow_slider"),
+            $li = $("ul li", $slider),
+            arrowWidth = 48 * -1,
+            arrowOpacity = 1.0,
+            $arrows = $(
+              '<a href="#" class="prev"></a><a href="#" class="next"></a>'
+            ).css("opacity", arrowOpacity),
+            $prev = $arrows.filter(".prev"),
+            $next = $arrows.filter(".next"),
+            fadeSpeed = 400;
+
+          // 設定箭頭的顯示邏輯
+          $slider.append($arrows).hover(
+            function () {
+              var no = $li.filter(".selected").index();
+              arrowAction(
+                no > 0 ? 0 : arrowWidth,
+                no < $li.length - 1 ? 0 : arrowWidth
+              );
+            },
+            function () {
+              arrowAction(arrowWidth, arrowWidth);
+            }
+          );
+
+          // 當滑鼠點擊左右箭頭時
+          $arrows
+            .click(function () {
+              // 先取出目前顯示的 li 及其排行
+              var $selected = $li.filter(".selected"),
+                no = $selected.index();
+
+              // 判斷是要上一張還是下一張
+              no = this.className == "prev" ? no - 1 : no + 1;
+              $li
+                .eq(no)
+                .addClass("selected")
+                .siblings()
+                .removeClass("selected");
+
+              arrowAction(
+                no > 0 ? 0 : arrowWidth,
+                no < $li.length - 1 ? 0 : arrowWidth
+              );
+
+              return false;
+            })
+            .focus(function () {
+              this.blur();
+            });
+
+          // 控制左右箭頭顯示或隱藏
+          function arrowAction(l, r) {
+            $prev.stop().css({ left: l });
+            $next.stop().css({ right: r });
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="gallery_arrow_slider">
+      <ul>
+        <li class="selected"><img src="community_app.JPG" /></li>
+        <li><img src="community_app2.JPG" /></li>
+      </ul>
+    </div>
+  </body>
+</html>

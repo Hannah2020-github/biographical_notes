@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Hannah Chung 的個人履歷</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.6.4.js"
+      integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      //圖片顯示與原點 highlight
+      $(function () {
+        $("#pointM").click(function () {
+          $("#myself").fadeIn();
+          $("#photo1").fadeOut();
+          $("#photo2").fadeOut();
+
+          $("#pointM").css("background-color", "rgb(87, 201, 172)");
+          $("#point1").css("background-color", "white");
+          $("#point2").css("background-color", "white");
+        });
+
+        $("#point1").click(function () {
+          $("#myself").fadeOut();
+          $("#photo1").fadeIn();
+          $("#photo2").fadeOut();
+
+          $("#pointM").css("background-color", "white");
+          $("#point1").css("background-color", "rgb(87, 201, 172)");
+          $("#point2").css("background-color", "white");
+        });
+
+        $("#point2").click(function () {
+          $("#myself").fadeOut();
+          $("#photo1").fadeOut();
+          $("#photo2").fadeIn();
+
+          $("#pointM").css("background-color", "white");
+          $("#point1").css("background-color", "white");
+          $("#point2").css("background-color", "rgb(87, 201, 172)");
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <div id="card">
+      <div id="photo">
+        <img src="myself.JPG" width="238" height="244" id="myself" />
+        <img src="photo1.jpeg" width="238" height="244" id="photo1" />
+        <img src="photo2.jpeg" width="238" height="244" id="photo2" />
+        <div class="point" id="pointM"></div>
+        <div class="point" id="point1"></div>
+        <div class="point" id="point2"></div>
+      </div>
+
+      <div id="intro">
+        <h2>Hannah Chung</h2>
+        <h3>軟體工程師</h3>
+        <h3>台北/新竹</h3>
+        <h3>
+          3年的應用軟體開發經驗，<br />熟悉 Java
+          擅長移動裝置開發、網頁開發、數據庫串接<br />
+          參與多種類型的專案，與後端工程師合作開發 API，及美術人員溝通 UI 呈現
+        </h3>
+      </div>
+
+      <div id="about">
+        <h4><i class="fa-solid fa-laptop-code"></i> 工作經歷</h4>
+        <div class="Profession-block">
+          <div class="left-text">Java 工程師</div>
+          <div class="right-text">蟲洞科技 Mar. 2021 - Dec. 2022</div>
+        </div>
+
+        <div class="indent-2">
+          前端網頁功能開發及後端資料庫串接， CMRT
+          專案開發負責人，6個月完成新專案開發以及後續專案的新功能擴增。
+        </div>
+
+        <div class="Profession-block">
+          <div class="left-text">軟體工程師</div>
+          <div class="right-text">華電聯網 Dec. 2017 - Sept. 2020</div>
+        </div>
+        <div class="indent-2">
+          Android 平台開發， 新北智慧社區 APP
+          負責人，修復第一版正式版漏掃資安問題，達成客戶續約;
+          華人健康網診所專案負責人，擴建新功能，達成原訂單續訂 30％ 的數量。
+        </div>
+
+        <div class="Profession-block">
+          <div class="left-text">軟體工程師</div>
+          <div class="right-text">台灣禮物卡 Apr. 2017 - Jul. 2017</div>
+        </div>
+        <div class="indent-2">
+          禮物卡金融核銷 App
+        </div>
+
+        <h4><i class="fa-solid fa-user-graduate"></i> 學歷</h4>
+        <div class="indent-2">台南科技大學</div>
+
+        <h4><i class="fa-solid fa-street-view"></i> 實務作品</h4>
+
+        <ul id="gallery-set">
+          <li><a href="index2.html">電子看板</li>
+          <li>
+            <a href="index3.html">Android 行動裝置</a>
+          </li>
+        </ul>
+      </div>
+
+      <div id="other">
+        <h4 id="other-text"><i class="fa-solid fa-face-smile"></i> 個性</h4>
+        <div class="personality-block">
+          <div class="left-text">內向</div>
+          <div class="right-text">外向</div>
+          <div class="gray-bar"></div>
+          <div class="green-bar" id="green-bar1"></div>
+        </div>
+        <div class="personality-block">
+          <div class="left-text">理性</div>
+          <div class="right-text">感性</div>
+          <div class="gray-bar"></div>
+          <div class="green-bar" id="green-bar2"></div>
+        </div>
+        <div class="personality-block">
+          <div class="left-text">謹慎</div>
+          <div class="right-text">冒險</div>
+          <div class="gray-bar"></div>
+          <div class="green-bar" id="green-bar3"></div>
+        </div>
+        <div class="personality-block">
+          <div class="left-text">思考</div>
+          <div class="right-text">行動</div>
+          <div class="gray-bar"></div>
+          <div class="green-bar" id="green-bar4"></div>
+        </div>
+
+        <h4 id="other-text"><i class="fa-solid fa-code"></i> 技能</h4>
+        <div class="Skill-block">
+          <div class="left-text">Java</div>
+          <div class="gray-bar"></div>
+          <div class="green-bar" id="green-bar5"></div>
+        </div>
+        <div class="Skill-block">
+          <div class="left-text">JavaScript</div>
+          <div class="gray-bar"></div>
+          <div class="green-bar" id="green-bar5"></div>
+        </div>
+        <div class="Skill-block">
+          <div class="left-text">Android</div>
+          <div class="gray-bar"></div>
+          <div class="green-bar" id="green-bar5"></div>
+        </div>
+        <div class="Skill-block">
+          <div class="left-text">HTML</div>
+          <div class="gray-bar"></div>
+          <div class="green-bar" id="green-bar5"></div>
+        </div>
+        <div class="Skill-block">
+          <div class="left-text">MySQL</div>
+          <div class="gray-bar"></div>
+          <div class="green-bar" id="green-bar5"></div>
+        </div>
+        <div class="Skill-block">
+          <div class="left-text">Git</div>
+          <div class="gray-bar"></div>
+          <div class="green-bar" id="green-bar5"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
